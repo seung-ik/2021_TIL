@@ -1,4 +1,4 @@
-### 03/18(목)
+### 03/17(수)
 
 ##### 서울에서 김서방 찾기(프로그래머스 1단계)
 
@@ -12,7 +12,7 @@
 
 * (filter,for,reduce,O(n))
 
-### 03/19(금)
+### 03/18(목)
 
 ##### 모의고사(프로그래머스 1단계)
 
@@ -36,5 +36,26 @@ function solution(answers) {
 
 
     return answer;
+}
+```
+
+### 03/19(금)
+
+##### 3진법(프로그래머스 1단계)
+
+```
+function solution(n) {
+    const answer = [];
+    while(n !== 0) {
+        answer.unshift(n % 3);
+        n = Math.floor(n/3);
+    }
+    return answer.reduce((acc,v,i) => acc + (v * Math.pow(3, i)),0);
+}
+```
+
+```
+const solution = (n) => {
+    return parseInt([...n.toString(3)].reverse().join(""), 3);
 }
 ```
