@@ -59,3 +59,41 @@ const solution = (n) => {
     return parseInt([...n.toString(3)].reverse().join(""), 3);
 }
 ```
+
+##### k번째수(프로그래머스 1단계)
+
+- compareFunction이 제공되지 않으면 요소를 문자열로 변환하고 유니 코드 코드 포인트 순서로 문자열을 비교하여 정렬됩니다. 예를 들어 "바나나"는 "체리"앞에옵니다. 숫자 정렬에서는 9가 80보다 앞에 오지만 숫자는 문자열로 변환되기 때문에 "80"은 유니 코드 순서에서 "9"앞에옵니다.
+
+- 이중배열에서 구조분해할당
+
+##### 두정수 사이의 합 (프로그래머스 1단계)
+
+- 간단한 조건의 삼항연산자 사용
+- 가우스의 재림
+
+##### 콜라츠 추측 (프로그래머스 1단계)
+
+```
+function collatz(num,count = 0) {
+    return num == 1 ? (count >= 500 ? -1 : count) : collatz(num % 2 == 0 ? num / 2 : num * 3 + 1,++count);
+}
+```
+
+- 이걸 재귀함수로 푸네 대박
+
+##### 소수찾기 (프로그래머스 1단계)(실패)
+
+- Array.from({length:100},(v,i)=>i+1)
+- 에라토스 체
+
+##### 폰켓몬 (프로그래머스 1단계)
+
+- let many= Object.keys(obj).length 객체의 길이구하기
+- reduce 로 객체 만들기
+
+```
+ const check = nums.reduce((total,cur) => {
+        total[cur] ? total[cur]++ : total[cur] = 1;
+        return total;
+    },{});
+```
