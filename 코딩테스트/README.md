@@ -97,3 +97,87 @@ function collatz(num,count = 0) {
         return total;
     },{});
 ```
+
+##### 2016년 (프로그래머스 1단계)
+
+- 이상하게 푼거같은데?
+
+### 03/19(금)
+
+##### 평균 구하기(프로그래머스 1단계)
+
+- reduce 로 평균구할수 있구나
+
+##### 체육복 (프로그래머스 1단계)
+
+- 탐욕법 에대해서 정리하기
+
+##### 두개뽑아서 더하기 (프로그래머스 1단계)
+
+- 배열에서 중복제거 하는 방법 (filter, reduce, new Set+...operator)
+
+##### 신규 아이디 추천 (프로그래머스 1단계)
+
+- 정규표현식 공부해보기
+
+```
+function solution(new_id) {
+    const answer = new_id
+        .toLowerCase() // 1
+        .replace(/[^\w-_.]/g, '') // 2
+        .replace(/\.+/g, '.') // 3
+        .replace(/^\.|\.$/g, '') // 4
+        .replace(/^$/, 'a') // 5
+        .slice(0, 15).replace(/\.$/, ''); // 6
+    const len = answer.length;
+    return len > 2 ? answer : answer + answer.charAt(len - 1).repeat(3 - len);
+}
+```
+
+##### 시저암호 (프로그래머스 1단계)
+
+- 아스키 코드 안쓰고 푸는 방법
+- 아스키 코드로 푸는 방법 => String.fromCharCode(31) , sentence.charCodeAt(index)
+
+```
+function solution(s, n) {
+    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lower = "abcdefghijklmnopqrstuvwxyz";
+    var answer= '';
+
+    for(var i =0; i <s.length; i++){
+        var text = s[i];
+        if(text == ' ') {
+            answer += ' ';
+            continue;
+        }
+        var textArr = upper.includes(text) ? upper : lower;
+        var index = textArr.indexOf(text)+n;
+        if(index >= textArr.length) index -= textArr.length;
+        answer += textArr[index];
+    }
+    return answer;
+}
+```
+
+- 인덱스로 분리해서 생각하기 와 우 와 우 와 우
+
+##### 비밀지도 (프로그래머스 1단계)
+
+```
+const addZero = (n, s) => {
+    return '0'.repeat(n - s.length) + s;
+}
+```
+
+- add 제로 다른 사람은 되게 간단하게 품(정규표현식 사용해서+)
+
+### 03/21(일)
+
+##### 문자열내 p와 y의 개수 (프로그래머스 1단계)
+
+- 아 uppercase 해서 할수잇엇겟다.
+
+##### 소수만들기 (프로그래머스 1단계)
+
+- 멱집합으로도 해보기 멱집합에 대한개념 공부해야됨
