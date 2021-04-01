@@ -45,7 +45,7 @@ app.use(cors())
 
 ### http 요청의 종류 || http request method
 
-- Get,Post,Put,Options,Delete,Head,Patch
+- Get,Post,Put,Options,Delete,Patch
 - get : 데이터를 받는데 사용하는 method
 - post : 특정 리소스에 엔터티를 제출할때 쓰인다.(리소스의 생성 / 반복된 요청에 새로운 리소스 반환)
 - put : 특정 리소스의 수정과 생성 (반복된요청에 같은 리소스를 반환한다.)
